@@ -1,1 +1,3 @@
 This is the repository for My Shopping Review app.
+App production link on Heroku:
+https://my-shopping-review-tatjana.herokuapp.com/
