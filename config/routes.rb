@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   
   root 'welcome#index' # reference is root_path
+  get 'my_shopping', to: "users#my_shopping"
   
+  resources :items
   #get 'about', to: 'pages#about'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

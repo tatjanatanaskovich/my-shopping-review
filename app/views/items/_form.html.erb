@@ -1,0 +1,26 @@
+<% if @item.errors.any? %>
+<h2>The following errors prevented the item from getting created</h2>
+<ul>
+<% @item.errors.full_messages.each do |msg| %>
+<li><%= msg %></li>
+<% end %>
+</ul>
+<% end %>
+<%= form_for @item do |f| %>
+<p>
+  <%= f.label :name %><br/>
+  <%= f.text_field :name %>
+</p>
+<p>
+  <%= f.label :price %><br/>
+  <%= f.number_field :price, class: :text_field, :step => 0.01, :min => 0.00 %>
+</p>
+<p>
+  <%= f.label :date %><br/>
+  <%= f.date_field :date %>
+</p>
+<p>
+  <%=f.submit %>
+</p>
+<% end %>
+<%= link_to 'Back to items listing', items_path %>
