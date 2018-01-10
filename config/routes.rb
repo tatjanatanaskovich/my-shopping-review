@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -8,8 +9,8 @@ Rails.application.routes.draw do
   
   root 'welcome#index' # reference is root_path
   get 'my_shopping', to: "users#my_shopping"
-  
   resources :items
+  
   #get 'about', to: 'pages#about'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
