@@ -1,0 +1,17 @@
+<h1>Listing all categories</h1>
+<p>
+  
+</p>
+<table>
+  <tr>
+    <th>Category name</th>
+  </tr>
+  <% @category.each do |category| %>
+  <tr>
+    <td><%=category.name %></td>
+    <td><%= link_to 'Edit', edit_category_path(category) %></td>
+    <td><%= link_to 'Show', category_path(category) %></td>
+    <td><%= link_to 'Delete', category_path(category), method: :delete, data: {confirm: "Are you sure?"} %></td>
+  </tr>
+  <% end %>
+</table>

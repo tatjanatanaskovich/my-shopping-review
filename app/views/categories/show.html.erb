@@ -1,0 +1,8 @@
+<h1>Showing selected category</h1>
+<p>
+  Category name: <%= @category.name %>
+</p>
+
+<%= link_to 'Edit this category', edit_category_path(@category) %>
+<%= link_to 'Back to category listing', categories_path %>
+

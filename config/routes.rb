@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   root 'welcome#index' # reference is root_path
   get 'my_shopping', to: "users#my_shopping"
   resources :items
+  resources :categories
   
   #get 'about', to: 'pages#about'
   # Example of regular route:
