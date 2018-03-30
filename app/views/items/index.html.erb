@@ -1,7 +1,5 @@
 <h1>Listing all items</h1>
-<p>
-  
-</p>
+
 <table>
   <tr>
     <th>Name</th>
@@ -16,6 +14,12 @@
     <td><%= link_to 'Edit', edit_item_path(item) %></td>
     <td><%= link_to 'Show', item_path(item) %></td>
     <td><%= link_to 'Delete', item_path(item), method: :delete, data: {confirm: "Are you sure?"} %></td>
+  <%= link_to @item.user.username, user_session(@item.user) %>
+  <%= pluralize(@item.user.item.count, "item") if @item.user.items %>
+  <td>Created by:<%= item.user.username if item.user %></td>
+  <td><%= time_ago_in_words(item.created_at) %>ago</td>
+  <td>last updated:<%= time_ago_in_words(item.updated_at) %>ago</td>
   </tr>
-  <% end %>
+ <% end %>
 </table>
+
